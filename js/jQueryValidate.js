@@ -35,21 +35,12 @@ $("#formOne").validate({
     emitting_state: { required: true },
     countries: { required: true },
     marital_status: { required: true },
-    phone: { required: true, number: true },
+    phone: { required: true },
     cep: { required: true, minlength: 8 },
     street: { required: true },
     bairro: { required: true },
     localidade: { required: true, minlength: 3 },
     uf: { required: true },
-    // submitHandler: function(form) {
-    //       $.post("url", data,
-    //         function (data, textStatus, jqXHR) {
-              
-    //         },
-    //         "dataType"
-    //       );
-    //     form.submit();
-    //   }
   },
 
   messages: {
@@ -77,32 +68,11 @@ $("#formOne").validate({
 $('#cpf').blur(function (e) { e.preventDefault(); $(this).mask('999.999.999-99') })
 $('#phone').blur(function (e) { e.preventDefault(); $(this).mask('(99)999999999') })
 
-// Validando Sexo
+$('#formOne').submit(function (e) { 
+  e.preventDefault();
 
-// $('#sexChoice1').blur(function (e) { 
-//     e.preventDefault();
-//     sexChoice = []
-    
-//     sexChoice1 = $("#sexChoice1").is(":checked")
-//     sexChoice2 = $('#sexChoice2').is(":checked")
-    
-//     console.log(sexChoice1)
-    
-//     if (sexChoice1 == true && sexChoice2 == false) {
-    
-//       sexChoice.push($("#sexChoice1").val())
-    
-//     }
-    
-//     else if (sexChoice2 == true && sexChoice1 == false) {
-    
-//       sexChoice.push($("#sexChoice2").val())
-    
-//     }
-//     else {
-    
-//     }    
-// });
-
+  var formDataArray = $(this).serializeArray(); 
+  console.log(formDataArray)
+});
 
 

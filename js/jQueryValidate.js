@@ -28,21 +28,26 @@ $("#formOne").validate({
       minlength: 6,
       equalTo: password
     },
-    birthdate: { required: true, data: true },
+    birthdate: { required: true },
     // sexChoice: { required: true },
     cpf: { required: true, minlength: 11 },
     rg: { required: true },
     emitting_state: { required: true },
     countries: { required: true },
     marital_status: { required: true },
-    phone: { required: true },
+    phone: { required: true, number: true },
     cep: { required: true, minlength: 8 },
     street: { required: true },
     bairro: { required: true },
     localidade: { required: true, minlength: 3 },
-    uf: { required: true, minlength: 2 },
+    uf: { required: true },
     // submitHandler: function(form) {
-          // Executar chama AJAX post
+    //       $.post("url", data,
+    //         function (data, textStatus, jqXHR) {
+              
+    //         },
+    //         "dataType"
+    //       );
     //     form.submit();
     //   }
   },
@@ -70,7 +75,7 @@ $("#formOne").validate({
 });
 
 $('#cpf').blur(function (e) { e.preventDefault(); $(this).mask('999.999.999-99') })
-$('#Phone').blur(function (e) { e.preventDefault(); $(this).mask('(99)99999-9999') })
+$('#phone').blur(function (e) { e.preventDefault(); $(this).mask('(99)999999999') })
 
 // Validando Sexo
 
